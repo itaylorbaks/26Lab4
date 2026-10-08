@@ -55,14 +55,17 @@ public class MyLinkedList<T> extends AbstractList<T>{
         
         }
         if (index == this.size){
-            DoublyLinkedNode newNode = new DoublyLinkedNode(item, getNthNode(index).previous, getNthNode(index));
-                getNthNode(index).previous.next = newNode;
-                getNthNode(index).previous = newNode;
+            DoublyLinkedNode newNode = new DoublyLinkedNode(item, this.lastNode, null);
+                this.lastNode.next = newNode;
+                this.lastNode = newNode;
                 this.size++;
             
         }
         else {
-            DoublyLinkedNode newNode = new DoublyLinkedNode(item, null, null);
+            DoublyLinkedNode newNode = new DoublyLinkedNode(item, getNthNode(index).previous, getNthNode(index));
+                getNthNode(index).previous.next = newNode;
+                getNthNode(index).previous = newNode;
+                this.size++;
 
         }
     }
