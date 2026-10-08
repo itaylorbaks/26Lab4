@@ -1,4 +1,15 @@
 public class MyLinkedList<T> extends AbstractList<T>{
+    private DoublyLinkedNode firstNode;
+    private DoublyLinkedNode lastNode;
+    private int size;
+
+    public MyLinkedList(){
+        this.firstNode = null;
+        this.lastNode = null;
+        this.size = 0;
+    }
+
+
 
     private class DoublyLinkedNode {
                
