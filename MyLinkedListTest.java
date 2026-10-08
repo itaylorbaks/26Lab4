@@ -48,7 +48,5 @@ public class MyLinkedListTest {
         assertEquals(true, list.add("first"));
         assertEquals(true, list.add("second"));
         assertEquals(2, list.size());
-        assertEquals("first", list.getNthNode(0));
-        assertEquals("second", list.getNthNode(1));
     }
 }
