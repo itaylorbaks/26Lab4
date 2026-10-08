@@ -42,20 +42,23 @@ public class MyLinkedList<T> extends AbstractList<T>{
         }
         if(size == 0){
             DoublyLinkedNode newNode = new DoublyLinkedNode(item, firstNode, lastNode);
-            newNode = this.firstNode;
-            newNode = this.lastNode;
+            this.firstNode = newNode;
+            this.lastNode = newNode;
+            this.size++;
         }
 
         if (index == 0){
             DoublyLinkedNode newNode = new DoublyLinkedNode(item, null, firstNode){
-                newNode = this.firstNode.previous; 
-                newNode = this.firstNode;
+                this.firstNode.previous = newNode;
+                this.firstNode = newNode;
+                size++;
             }
         }
         if (index == this.size){
             DoublyLinkedNode newNode = new DoublyLinkedNode(item, lastNode, null){
-                newNode = this.firstNode.previous;
-                newNode = this.firstNode;
+                this.lastNode.next = newNode;
+                this.lastNode = newNode;
+                size++;
             }
         }
     }
