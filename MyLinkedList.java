@@ -9,6 +9,15 @@ public class MyLinkedList<T> extends AbstractList<T>{
         this.size = 0;
     }
 
+    public int size(){
+        return this.size;
+    }
+
+    public T get(int index) {
+     // TODO: we will fill this in soon
+     return null;
+    }
+
 
 
     private class DoublyLinkedNode {
