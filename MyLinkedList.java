@@ -45,7 +45,6 @@ public class MyLinkedList<T> extends AbstractList<T>{
             this.firstNode = newNode;
             this.lastNode = newNode;
             this.size++;
-            return;
         }
 
         if (index == 0){
@@ -53,8 +52,7 @@ public class MyLinkedList<T> extends AbstractList<T>{
                 this.firstNode.previous = newNode;
                 this.firstNode = newNode;
                 this.size++;
-                return;
-            
+        
         }
         if (index == this.size){
             DoublyLinkedNode newNode = new DoublyLinkedNode(item, this.lastNode, null);
