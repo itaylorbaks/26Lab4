@@ -10,7 +10,10 @@ public class UsingIterators {
             al.add(i);
         }
 
-        Iterator<Integer> iter = al.iterator();
+        // Iterator<Integer> iter = al.iterator();
+        for (Integer i : al) {
+            System.out.println(i);
+        }
     }
     
 }

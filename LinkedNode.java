@@ -4,8 +4,8 @@ public class LinkedNode<T> {
 
     public LinkedNode<T> next;
 
-    public LinkedNode<T>(T data, LinkedNode<T> next){
-        this.data = date;
+    public LinkedNode(T data, LinkedNode<T> next){
+        this.data = data;
         this.next = next;
     }
 
