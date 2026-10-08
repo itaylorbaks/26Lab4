@@ -41,21 +41,21 @@ public class MyLinkedList<T> extends AbstractList<T>{
             throw new IndexOutOfBoundsException();
         }
         if(size == 0){
-            DoublyLinkedNode newNode = new DoublyLinkedNode(item, firstNode, lastNode);
+            DoublyLinkedNode newNode = new DoublyLinkedNode(item, null, null);
             this.firstNode = newNode;
             this.lastNode = newNode;
             this.size++;
         }
 
         if (index == 0){
-            DoublyLinkedNode newNode = new DoublyLinkedNode(item, null, firstNode){
+            DoublyLinkedNode newNode = new DoublyLinkedNode(item, null, null){
                 this.firstNode.previous = newNode;
                 this.firstNode = newNode;
                 this.size++;
             }
         }
         if (index == this.size){
-            DoublyLinkedNode newNode = new DoublyLinkedNode(item, lastNode, null){
+            DoublyLinkedNode newNode = new DoublyLinkedNode(item, null, null){
                 this.lastNode.next = newNode;
                 this.lastNode = newNode;
                 this.size++;
