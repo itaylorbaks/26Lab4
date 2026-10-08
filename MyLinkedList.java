@@ -12,7 +12,6 @@ public class MyLinkedList<T> extends AbstractList<T>{
     }
 
     private class DoublyLinkedNode {
-               
         private T item;
         private DoublyLinkedNode previous;
         private DoublyLinkedNode next;
