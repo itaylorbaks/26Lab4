@@ -33,6 +33,23 @@ public class MyLinkedList<T> extends AbstractList<T>{
             return thisNode;
         }
     }
+    public void add(int index, T item){
+        if(item == null){
+            throw new NullPointerException();
+        }
+        if(index < 0 || index> this.size){
+            throw new IndexOutOfBoundsException();
+        }
+        if(size == 0){
+            DoublyLinkedNode newNode = new DoublyLinkedNode(item, firstNode, lastNode);
+            newNode = firstNode;
+            newNode = lastNode;
+        }
+
+        if (index == 0){
+            
+        }
+    }
 
 
 
