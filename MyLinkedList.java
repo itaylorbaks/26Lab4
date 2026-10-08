@@ -19,6 +19,20 @@ public class MyLinkedList<T> extends AbstractList<T>{
      // TODO: we will fill this in soon
         return null;
     }
+    private DoublyLinkedNode getNthNode(int index){
+        int count = 0;
+        DoublyLinkedNode thisNode = this.firstNode;
+        while(count < index && thisNode!= null){
+            thisNode = thisNode.next;
+            count++;
+        }
+        if (thisNode ==null){
+            throw new IndexOutOfBoundsException();
+        }
+        else{
+            return thisNode;
+        }
+    }
 
 
 
