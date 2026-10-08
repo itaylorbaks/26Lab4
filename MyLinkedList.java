@@ -26,7 +26,7 @@ public class MyLinkedList<T> extends AbstractList<T>{
             thisNode = thisNode.next;
             count++;
         }
-        if (thisNode ==null){
+        if (thisNode == null){
             throw new IndexOutOfBoundsException();
         }
         else{
