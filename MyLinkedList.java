@@ -61,7 +61,6 @@ public class MyLinkedList<T> extends AbstractList<T>{
                 this.lastNode.next = newNode;
                 this.lastNode = newNode;
                 this.size++;
-                return;
             
         }
     }
