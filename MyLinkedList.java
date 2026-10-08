@@ -22,7 +22,7 @@ public class MyLinkedList<T> extends AbstractList<T>{
     private DoublyLinkedNode getNthNode(int index){
         int count = 0;
         DoublyLinkedNode thisNode = this.firstNode;
-        while(count < index && thisNode!= null){
+        while(count < index && thisNode!= null && index >= 0){
             thisNode = thisNode.next;
             count++;
         }
@@ -45,6 +45,7 @@ public class MyLinkedList<T> extends AbstractList<T>{
             this.firstNode = newNode;
             this.lastNode = newNode;
             this.size++;
+            return;
         }
 
         if (index == 0){
@@ -52,6 +53,7 @@ public class MyLinkedList<T> extends AbstractList<T>{
                 this.firstNode.previous = newNode;
                 this.firstNode = newNode;
                 this.size++;
+                return;
         
         }
         if (index == this.size){
@@ -59,13 +61,15 @@ public class MyLinkedList<T> extends AbstractList<T>{
                 this.lastNode.next = newNode;
                 this.lastNode = newNode;
                 this.size++;
+                return;
             
         }
-        else {
-            DoublyLinkedNode newNode = new DoublyLinkedNode(item, getNthNode(index).previous, getNthNode(index));
-                getNthNode(index).previous.next = newNode;
-                getNthNode(index).previous = newNode;
-                this.size++;
+        
+        DoublyLinkedNode newNode = new DoublyLinkedNode(item, getNthNode(index).previous, getNthNode(index));
+            getNthNode(index).previous.next = newNode;
+            getNthNode(index).previous = newNode;
+            this.size++;
+
 
         }
     }
