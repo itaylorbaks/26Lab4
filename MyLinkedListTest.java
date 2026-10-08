@@ -40,4 +40,15 @@ public class MyLinkedListTest {
         MyLinkedList<String> list = new MyLinkedList<>();
         list.add(1, "item");
     }
+
+    @Test
+    public void testAdd2() {
+        MyLinkedList<String> list = new MyLinkedList<>();
+
+        assertEquals(true, list.add("first"));
+        assertEquals(true, list.add("second"));
+        assertEquals(2, list.size());
+        assertEquals("first", list.getNthNode(0));
+        assertEquals("second", list.getNthNode(1));
+    }
 }
