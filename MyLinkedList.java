@@ -31,8 +31,7 @@ public class MyLinkedList<T> extends AbstractList<T> {
         private DoublyLinkedNode previousNode;
         private DoublyLinkedNode nextNode;
 
-        public MyLinkedListIterator(DoublyLinkedNode previousNode,
-                                    DoublyLinkedNode nextNode) {
+        public MyLinkedListIterator(DoublyLinkedNode previousNode, DoublyLinkedNode nextNode) {
             this.previousNode = previousNode;
             this.nextNode = nextNode;
         }
