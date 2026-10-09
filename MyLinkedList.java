@@ -2,6 +2,7 @@
 import java.util.AbstractList;
 import java.util.Iterator;
 import java.util.ListIterator;
+import java.util.NoSuchElementException;
 
 public class MyLinkedList<T> extends AbstractList<T> {
     private DoublyLinkedNode firstNode;
@@ -35,7 +36,55 @@ public class MyLinkedList<T> extends AbstractList<T> {
             this.previousNode = previousNode;
             this.nextNode = nextNode;
         }
-    }
+
+        public boolean hasNext(){
+            return (this.nextNode != null);
+        }
+
+        public T next(){
+            if(this.nextNode != null ){
+                T nextItem = nextNode.item;
+                previousNode = nextNode;
+                return nextItem;
+            }
+            else {
+                throw new NoSuchElementException();
+            }
+
+        }
+        public boolean hasPrevious(){
+            return (previousNode != null);
+        }
+        public T previous() {
+            if (this.previousNode != null) {
+                T previousItem = previousNode.item;
+                nextNode = previousNode;
+                return previousItem;
+            }
+            else {
+                throw new NoSuchElementException();
+            }
+        }
+                public int nextIndex() {
+            throw new UnsupportedOperationException();
+        }
+
+        public int previousIndex() {
+            throw new UnsupportedOperationException();
+        }
+
+        public void add(T item) {
+            throw new UnsupportedOperationException();
+        }
+
+        public void remove() {
+            throw new UnsupportedOperationException();
+        }
+
+        public void set(T item) {
+            throw new UnsupportedOperationException();
+        }
+        }
 
     public ListIterator<T> listIterator() {
         return new MyLinkedListIterator(null, firstNode);
