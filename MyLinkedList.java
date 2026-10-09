@@ -1,4 +1,6 @@
 import java.util.AbstractList;
+import java.util.Iterator; 
+import java.util.ListIterator;
 
 public class MyLinkedList<T> extends AbstractList<T>{
     private DoublyLinkedNode firstNode;
@@ -12,9 +14,8 @@ public class MyLinkedList<T> extends AbstractList<T>{
     }
 
     private class DoublyLinkedNode {
-        private T item;
-        private DoublyLinkedNode previous;
-        private DoublyLinkedNode next;
+        private DoublyLinkedNode thisNode;
+        private int index;
 
         public DoublyLinkedNode(T item, DoublyLinkedNode previous, DoublyLinkedNode next){
             this.item = item;
@@ -23,6 +24,22 @@ public class MyLinkedList<T> extends AbstractList<T>{
         }
 
 	}
+    private class MyLinkedListIterator implements ListIterator<T> {
+        private DoublyLinkedNode previousNode;
+        private DoublyLinkedNode nextNode;
+
+        public MyLinkedListIterator(DoublyLinkedNode previousNode, DoublyLinkedNode nextNode){
+            this.previousNode = null;
+            this.nextNode = this.firstNode;
+        }
+    }
+
+    public ListIterator<T> listIterator(){
+        return new MyLinkedListIterator<T>(null, firstNode);
+    }
+    public Iterator<T>(){
+        listIterator();
+    }
 
     private DoublyLinkedNode getNthNode(int index) {
         if (index < 0 || index >= this.size) {
