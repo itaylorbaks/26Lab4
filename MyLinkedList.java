@@ -43,8 +43,12 @@ public class MyLinkedList<T> extends AbstractList<T>{
     }
 
     public T get(int index) {
-     // TODO: we will fill this in soon
-        return null;
+        if (index >= this.size || index < 0){
+            throw new IndexOutOfBoundsException();
+        }
+        DoublyLinkedNode node = getNthNode(index);
+        return node.item;
+
     }
     public void add(int index, T item){
         if(item == null){
