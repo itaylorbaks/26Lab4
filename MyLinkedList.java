@@ -106,7 +106,7 @@ public class MyLinkedList<T> extends AbstractList<T>{
         }
 
         public T remove(int index){
-            if (index > this.size || index < 0){
+            if (index > this.size-1 || index < 0){
                 throw new IndexOutOfBoundsException();
             }
             DoublyLinkedNode removedNode = getNthNode(index);
