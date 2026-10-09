@@ -37,54 +37,65 @@ public class MyLinkedList<T> extends AbstractList<T> {
             this.nextNode = nextNode;
         }
 
-        public boolean hasNext(){
+        @Override
+        public boolean hasNext() {
             return (this.nextNode != null);
         }
 
-        public T next(){
-            if(this.nextNode != null ){
+        @Override
+        public T next() {
+            if (this.nextNode != null) {
                 T nextItem = nextNode.item;
                 previousNode = nextNode;
+                nextNode = nextNode.next;
                 return nextItem;
-            }
-            else {
+            } else {
                 throw new NoSuchElementException();
             }
-
         }
-        public boolean hasPrevious(){
+
+        @Override
+        public boolean hasPrevious() {
             return (previousNode != null);
         }
+
+        @Override
         public T previous() {
             if (this.previousNode != null) {
                 T previousItem = previousNode.item;
                 nextNode = previousNode;
+                previousNode = previousNode.previous;
                 return previousItem;
-            }
-            else {
+            } else {
                 throw new NoSuchElementException();
             }
         }
-                public int nextIndex() {
+
+        @Override
+        public int nextIndex() {
             throw new UnsupportedOperationException();
         }
 
+        @Override
         public int previousIndex() {
             throw new UnsupportedOperationException();
         }
 
+        @Override
         public void add(T item) {
             throw new UnsupportedOperationException();
         }
 
+        @Override
         public void remove() {
             throw new UnsupportedOperationException();
         }
 
+        @Override
         public void set(T item) {
             throw new UnsupportedOperationException();
         }
-        }
+    }
 
     public ListIterator<T> listIterator() {
         return new MyLinkedListIterator(null, firstNode);
