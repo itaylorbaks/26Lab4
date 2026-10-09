@@ -15,5 +15,4 @@ public class UsingIterators {
             System.out.println(i);
         }
     }
-    
 }

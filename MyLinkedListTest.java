@@ -1,4 +1,5 @@
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -45,8 +46,8 @@ public class MyLinkedListTest {
     public void testAdd2() {
         MyLinkedList<String> list = new MyLinkedList<>();
 
-        assertEquals(true, list.add("first"));
-        assertEquals(true, list.add("second"));
+        assertTrue(list.add("first"));
+        assertTrue(list.add("second"));
         assertEquals(2, list.size());
     }
 }
