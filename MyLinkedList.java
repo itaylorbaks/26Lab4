@@ -92,6 +92,32 @@ public class MyLinkedList<T> extends AbstractList<T>{
             add(this.size, item);
             return true;
         }
+
+        public T set(int index, T item){
+            if (item == null){
+                throw new NullPointerException();
+            }
+            if (index > this.size || index < 0){
+                throw new IndexOutOfBoundsException();
+            }
+            T savedNode = getNthNode(index).item;
+            getNthNode(index).item  =  item;
+            return savedNode;
+        }
+
+        public T remove(int index){
+            DoublyLinkedNode removedNode = getNthNode(index);
+            if (removedNode.item == null){
+                throw new NullPointerException();
+            }
+            if (index > this.size || index < 0){
+                throw new IndexOutOfBoundsException();
+            }
+            removedNode.previous.next = removedNode.next;
+            removedNode.next.previous = removedNode.previous;
+            this.size--;
+            return removedNode.item;          
+        }
     }
 
 

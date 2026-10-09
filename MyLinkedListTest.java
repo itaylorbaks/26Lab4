@@ -50,4 +50,17 @@ public class MyLinkedListTest {
         assertTrue(list.add("second"));
         assertEquals(2, list.size());
     }
+
+    @Test
+    public void testSet() {
+        MyLinkedList<Integer> list = new MyLinkedList<>();
+
+        list.add(1);
+        list.add(2);
+        list.add(3);
+
+        assertEquals(Integer.valueOf(2), list.set(1, 42));
+        assertEquals(Integer.valueOf(42), list.get(1));
+        assertEquals(3, list.size());
+    }
 }
