@@ -106,12 +106,12 @@ public class MyLinkedList<T> extends AbstractList<T>{
         }
 
         public T remove(int index){
+            if (index > this.size || index < 0){
+                throw new IndexOutOfBoundsException();
+            }
             DoublyLinkedNode removedNode = getNthNode(index);
             if (removedNode.item == null){
                 throw new NullPointerException();
-            }
-            if (index > this.size || index < 0){
-                throw new IndexOutOfBoundsException();
             }
             removedNode.previous.next = removedNode.next;
             removedNode.next.previous = removedNode.previous;
