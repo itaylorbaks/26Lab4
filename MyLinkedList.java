@@ -118,6 +118,16 @@ public class MyLinkedList<T> extends AbstractList<T>{
             this.size--;
             return removedNode.item;          
         }
+        public boolean isEmpty(){
+            return (this.size > 0);
+        }
+        public void clear(){
+        this.firstNode = null;
+        this.firstNode.next = lastNode;
+        this.lastNode.previous = firstNode;
+        this.lastNode = null;
+        this.size = 0;
+        }
     }
 
 
