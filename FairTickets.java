@@ -18,9 +18,10 @@ public class FairTickets {
         }
     }
     public void createTixLists(int totPeopleNum){
-        for(int i = 0; i < totPeopleNum; i++ ){
+        for(int i = 1; i < totPeopleNum + 1; i++ ){
             MyLinkedList<Integer> list = new MyLinkedList<>();
             outer.add(list);
+            System.out.println("added person" + i);
         }
     }
 
@@ -30,22 +31,26 @@ public class FairTickets {
         for (int i = 1; i < totTixNum + 1; i++){
             if (forward == true){
                 if (outerIterator.hasNext()){
+                System.out.println("hasnext");
                 MyLinkedList<Integer> nextNode = outerIterator.next();
                 nextNode.add(i);
                 }
-                if (!outerIterator.hasNext()){
-                    System.out.println("Switching forward");
+                else {
+                    System.out.println("Switching to backward");
                     forward = false;
                     System.out.println(forward);
                 }
             }
             if (forward == false){
                 if (outerIterator.hasPrevious()){
-                MyLinkedList<Integer> prevNode = outerIterator.previous();
-                prevNode.add(i);
+                    System.out.println("hasprev");
+                    MyLinkedList<Integer> prevNode = outerIterator.previous();
+                    prevNode.add(i);
                 }
                 else {
+                    System.out.println("Switching to forward");
                     forward = true;
+                    System.out.println(forward);
                 }
                 }
         }

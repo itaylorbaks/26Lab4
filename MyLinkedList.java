@@ -39,7 +39,7 @@ public class MyLinkedList<T> extends AbstractList<T> {
 
         @Override
         public boolean hasNext() {
-            return (this.nextNode != null);
+            return this.nextNode != null;
         }
 
         @Override
@@ -56,7 +56,7 @@ public class MyLinkedList<T> extends AbstractList<T> {
 
         @Override
         public boolean hasPrevious() {
-            return (previousNode != null);
+            return this.previousNode != null;
         }
 
         @Override
