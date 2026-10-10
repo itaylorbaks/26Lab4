@@ -1,4 +1,4 @@
-
+import java.util.ListIterator;
 
 public class FairTickets {
     public int totPeopleNum;
@@ -15,15 +15,41 @@ public class FairTickets {
     public void createNamesList(int n){
         namesList = new MyLinkedList<>();
         for(int i = 0; i < n; i++ ){
-            namesList.add("Person " + n); 
+            namesList.add("Person " + i); 
         }
     }
     public void createTixLists(int totPeopleNum){
         outer = new MyLinkedList<>();
-        for(int i = 0; i < this.totPeopleNum; i++ ){
+        for(int i = 0; i < totPeopleNum; i++ ){
             MyLinkedList<Integer> list = new MyLinkedList<>();
             outer.add(list);
         }
+    }
+
+    public void assignTix(int totTixNum){
+        ListIterator<MyLinkedList<Integer>> outerIterator = outer.listIterator();
+        boolean forward = true;
+        for (int i = 0; i < totTixNum; i++){
+            if (forward){
+                if (outerIterator.hasNext()){
+                MyLinkedList<Integer> nextNode = outerIterator.next();
+                nextNode.add(i);
+                }
+                else {
+                    forward = false;
+                }
+            }
+            if (!forward){
+                if (outerIterator.hasPrevious()){
+                MyLinkedList<Integer> prevNode = outerIterator.previous();
+                prevNode.add(i);
+                }
+                else {
+                    forward = true;
+                }
+                }
+        }
+    }
     }
     
 
