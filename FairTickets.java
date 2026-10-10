@@ -28,7 +28,7 @@ public class FairTickets {
         ListIterator<MyLinkedList<Integer>> outerIterator = outer.listIterator();
         boolean forward = true;
         for (int i = 1; i < totTixNum + 1; i++){
-            if (forward){
+            if (forward == true){
                 if (outerIterator.hasNext()){
                 MyLinkedList<Integer> nextNode = outerIterator.next();
                 nextNode.add(i);
@@ -37,7 +37,7 @@ public class FairTickets {
                     forward = false;
                 }
             }
-            if (!forward){
+            if (forward == false){
                 if (outerIterator.hasPrevious()){
                 MyLinkedList<Integer> prevNode = outerIterator.previous();
                 prevNode.add(i);
