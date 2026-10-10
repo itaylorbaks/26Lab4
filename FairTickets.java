@@ -41,7 +41,9 @@ public class FairTickets {
                     nextNode.add(i);
                     System.out.println("Switching to backward");
                     forward = false;
+                    prevNode = outerIterator.previous();
                     System.out.println(forward);
+                    
                 }
             }
             else if (!forward){
@@ -54,7 +56,9 @@ public class FairTickets {
                     prevNode.add(i);
                     System.out.println("Switching to forward");
                     forward = true;
+                    nextNode = outerIterator.next();
                     System.out.println(forward);
+                    
                 }
                 }
         }
