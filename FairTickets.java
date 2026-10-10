@@ -78,7 +78,18 @@ public class FairTickets {
             System.out.println("Number of Tix must be double the Number of People");
             return;
         }
-        new FairTickets(Integer.parseInt(args[0]), Integer.parseInt(args[1]));
+        int instancePeople = Integer.parseInt(args[0]);
+        int instanceTix = Integer.parseInt(args[1]);
+
+        FairTickets thisFair = new FairTickets(instancePeople, instanceTix);
+        thisFair.createNamesList(thisFair.totPeopleNum);
+        thisFair.createTixLists(thisFair.totTixNum);
+        thisFair.assignTix(thisFair.totTixNum);
+        thisFair.printResults();
+
+
+
+        
 
 
 
