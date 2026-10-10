@@ -28,14 +28,17 @@ public class FairTickets {
     public void assignTix(int totTixNum){
         ListIterator<MyLinkedList<Integer>> outerIterator = outer.listIterator();
         boolean forward = true;
+        MyLinkedList<Integer> nextNode = new MyLinkedList<>();
+        MyLinkedList<Integer> prevNode = new MyLinkedList<>();
         for (int i = 1; i < totTixNum + 1; i++){
             if (forward){
                 if (outerIterator.hasNext()){
                 System.out.println("hasnext");
-                MyLinkedList<Integer> nextNode = outerIterator.next();
+                nextNode = outerIterator.next();
                 nextNode.add(i);
                 }
                 else {
+                    nextNode.add(i);
                     System.out.println("Switching to backward");
                     forward = false;
                     System.out.println(forward);
@@ -44,10 +47,11 @@ public class FairTickets {
             else if (!forward){
                 if (outerIterator.hasPrevious()){
                     System.out.println("hasprev");
-                    MyLinkedList<Integer> prevNode = outerIterator.previous();
+                    prevNode = outerIterator.previous();
                     prevNode.add(i);
                 }
                 else {
+                    prevNode.add(i);
                     System.out.println("Switching to forward");
                     forward = true;
                     System.out.println(forward);
