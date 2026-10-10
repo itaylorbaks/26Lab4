@@ -3,8 +3,8 @@ import java.util.ListIterator;
 public class FairTickets {
     public int totPeopleNum;
     public int totTixNum;
-    public MyLinkedList<String> namesList = null;
-    public MyLinkedList<MyLinkedList<Integer>> outer = null;
+    public MyLinkedList<String> namesList = new MyLinkedList<>();
+    public MyLinkedList<MyLinkedList<Integer>> outer = new MyLinkedList<>();
 
 
     public FairTickets(int totPeopleNum, int totTixNum){
@@ -13,13 +13,11 @@ public class FairTickets {
     }
 
     public void createNamesList(int n){
-        namesList = new MyLinkedList<>();
         for(int i = 0; i < n; i++ ){
-            namesList.add("Person " + i); 
+            namesList.add("Person " + i);
         }
     }
     public void createTixLists(int totPeopleNum){
-        outer = new MyLinkedList<>();
         for(int i = 0; i < totPeopleNum; i++ ){
             MyLinkedList<Integer> list = new MyLinkedList<>();
             outer.add(list);
@@ -50,6 +48,13 @@ public class FairTickets {
                 }
         }
     }
+
+    public String printResults(){
+        for(int i = 0; i < totPeopleNum; i++ ){
+            String personName = namesList.getNthNode(i).item;
+
+        }
+
     }
     
 
