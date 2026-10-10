@@ -34,7 +34,9 @@ public class FairTickets {
                 nextNode.add(i);
                 }
                 else {
+                    System.out.println("Switching forward");
                     forward = false;
+                    System.out.println(forward);
                 }
             }
             if (forward == false){
