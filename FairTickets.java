@@ -49,12 +49,21 @@ public class FairTickets {
         }
     }
 
-    public String printResults(){
-        for(int i = 0; i < totPeopleNum; i++ ){
-            String personName = namesList.getNthNode(i).item;
+    public void printResults(){
+        for (int i = 0; i < totPeopleNum; i++ ){
+            System.out.println(namesList.get(i) + "'s Tickets:");
+            int sum = 0;
+            MyLinkedList<Integer> thisPerson = outer.get(i);
+            ListIterator<Integer> thisPersonIterator = thisPerson.listIterator();
+            
+            while (thisPersonIterator.hasNext()){
+                int ticket = thisPersonIterator.next();
+                System.out.println("Ticket " + ticket);
+                sum += ticket;
+            }
+            System.out.println("Sum of Tickets: " + sum);
 
         }
-
     }
     
 
