@@ -29,7 +29,7 @@ public class FairTickets {
         ListIterator<MyLinkedList<Integer>> outerIterator = outer.listIterator();
         boolean forward = true;
         for (int i = 1; i < totTixNum + 1; i++){
-            if (forward == true){
+            if (forward){
                 if (outerIterator.hasNext()){
                 System.out.println("hasnext");
                 MyLinkedList<Integer> nextNode = outerIterator.next();
@@ -41,7 +41,7 @@ public class FairTickets {
                     System.out.println(forward);
                 }
             }
-            if (forward == false){
+            else if (!forward){
                 if (outerIterator.hasPrevious()){
                     System.out.println("hasprev");
                     MyLinkedList<Integer> prevNode = outerIterator.previous();
@@ -92,7 +92,7 @@ public class FairTickets {
 
         FairTickets thisFair = new FairTickets(instancePeople, instanceTix);
         thisFair.createNamesList(thisFair.totPeopleNum);
-        thisFair.createTixLists(thisFair.totTixNum);
+        thisFair.createTixLists(thisFair.totPeopleNum);
         thisFair.assignTix(thisFair.totTixNum);
         thisFair.printResults();
 
