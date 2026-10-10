@@ -215,4 +215,9 @@ public class MyLinkedList<T> extends AbstractList<T> {
         this.lastNode = null;
         this.size = 0;
     }
+
+    public void size(int x){
+        this.size = x;
+    }
 }
+
