@@ -62,6 +62,8 @@ public class FairTickets {
                 sum += ticket;
             }
             System.out.println("Sum of Tickets: " + sum);
+            System.out.println(" ");
+
 
         }
     }
