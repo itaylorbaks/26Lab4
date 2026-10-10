@@ -33,7 +33,7 @@ public class FairTickets {
                 MyLinkedList<Integer> nextNode = outerIterator.next();
                 nextNode.add(i);
                 }
-                else {
+                if (!outerIterator.hasNext()){
                     System.out.println("Switching forward");
                     forward = false;
                     System.out.println(forward);
