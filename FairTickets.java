@@ -74,8 +74,8 @@ public class FairTickets {
             System.out.println("Must Provide People and Tix Number");
             return;
         }
-        if (Integer.parseInt(args[1]) != Integer.parseInt(args[0])*2){
-            System.out.println("Number of Tix must be double the Number of People");
+        if ((Integer.parseInt(args[1]) %2) != 0){
+            System.out.println("Number of Tix must be a Multiple of 2 * the Number of People");
             return;
         }
         int instancePeople = Integer.parseInt(args[0]);
