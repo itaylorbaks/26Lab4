@@ -27,7 +27,7 @@ public class FairTickets {
     public void assignTix(int totTixNum){
         ListIterator<MyLinkedList<Integer>> outerIterator = outer.listIterator();
         boolean forward = true;
-        for (int i = 0; i < totTixNum; i++){
+        for (int i = 1; i < totTixNum + 1; i++){
             if (forward){
                 if (outerIterator.hasNext()){
                 MyLinkedList<Integer> nextNode = outerIterator.next();
