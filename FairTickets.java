@@ -13,7 +13,7 @@ public class FairTickets {
     }
 
     public void createNamesList(int n){
-        for(int i = 0; i < n; i++ ){
+        for(int i = 1; i < n+1; i++ ){
             namesList.add("Person " + i);
         }
     }
@@ -27,7 +27,7 @@ public class FairTickets {
     public void assignTix(int totTixNum){
         ListIterator<MyLinkedList<Integer>> outerIterator = outer.listIterator();
         boolean forward = true;
-        for (int i = 1; i < totTixNum + 1; i++){
+        for (int i = 0; i < totTixNum + 1; i++){
             if (forward){
                 if (outerIterator.hasNext()){
                 MyLinkedList<Integer> nextNode = outerIterator.next();
